@@ -1,0 +1,46 @@
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.bio {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.links li {
+  margin: 0;
+}
+
+.links a {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.links a:hover {
+  color: var(--color-link-hover);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 1.5rem 1rem 1rem;
+  }
+}
