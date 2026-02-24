@@ -1,0 +1,82 @@
+.page {
+  padding-top: 1rem;
+}
+
+.prose {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--color-text);
+}
+
+.recent {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.recent h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.postList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.postItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  gap: 1rem;
+}
+
+.postLink {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.postLink:hover {
+  text-decoration: underline;
+}
+
+.postDate {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.viewAll {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.viewAll:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
