@@ -8,32 +8,29 @@ export default function Home() {
   return (
     <article className={styles.page}>
       <p className={styles.prose}>
-        Hey there, I&apos;m <strong>Jonathan</strong>. I&apos;m studying{" "}
+        Hey! My name is <strong>Jonathan Li</strong>, I&apos;m studying{" "}
         <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>{" "}
-        at <strong>UC Berkeley</strong>. I like building things at the
-        intersection of <strong>[your interest]</strong> and{" "}
-        <strong>[your interest]</strong>, and I&apos;m currently{" "}
-        <strong>[what you&apos;re doing now]</strong>.
+        at <strong>UC Berkeley</strong>. I like building things involving <strong>Math, CS, and Datascience</strong>
+        . I&apos;m currently{" "} super interested in Computational Mathematics, Abstract Algebra, and Mixed Reality.
+        
       </p>
 
       <p className={styles.prose}>
-        This summer, I&apos;ll be at <strong>Apple</strong> working on the{" "}
+        This summer, I&apos;ll be at <strong>Apple</strong> as a Software Enginering Intern working in the{" "}
         <strong>Vision Products Group</strong>. Previously, I worked at{" "}
-        <strong>Scale AI</strong> and <strong>Airspace Technologies</strong>,
-        and I&apos;m currently a researcher at{" "}
-        <strong>Stanford AI Lab (SAIL)</strong> focused on{" "}
-        <strong>[topic]</strong>.
+        <strong>Scale AI</strong> as a Product Managment Intern and <strong>Airspace Technologies</strong>,
+        as a Data Analyst Intern. Currently, I'm a researcher at{" "}
+        <strong>Stanford AI Lab (SAIL)</strong> focusing on{" "}
+        <strong>AI Cybersecurity Benchmarks</strong>.
       </p>
 
       <p className={styles.prose}>
-        In my free time, I enjoy <strong>[hobby]</strong>,{" "}
-        <strong>[hobby]</strong>, and <strong>[hobby]</strong>.
+        In my free time, I enjoy <strong>playing volleyball</strong>,{" "}
+        <strong>golfing</strong>, <strong>traveling</strong>, and <strong>trying new foods</strong>.
       </p>
 
       <p className={styles.prose}>
-        I do some <strong>[activity]</strong> and <strong>[activity]</strong> as
-        well — you can find that in{" "}
-        <a href="/my-thoughts">my thoughts</a>.
+        I try to jot down <a href="/my-thoughts">my thoughts</a> about a great variety of things. Feel free to check them out if you are interested!
       </p>
 
       {recentPosts.length > 0 && (
