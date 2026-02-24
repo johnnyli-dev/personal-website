@@ -6,7 +6,7 @@ import styles from "./Nav.module.css";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/research", label: "Experience" },
+  { href: "/research", label: "Background" },
   { href: "/projects", label: "Projects" },
   { href: "/my-thoughts", label: "My Thoughts" },
   { href: "/cv", label: "CV" },

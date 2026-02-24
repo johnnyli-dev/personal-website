@@ -7,8 +7,10 @@ export default function Home() {
 
   return (
     <article className={styles.page}>
+      <p className={styles.greeting}>Hey!</p>
+
       <p className={styles.prose}>
-        Hey! My name is <strong>Jonathan Li</strong>, I&apos;m studying{" "}
+        My name is <strong>Jonathan Li</strong>, I&apos;m studying{" "}
         <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>{" "}
         at <strong>UC Berkeley</strong>. I like building things involving <strong>Math, CS, and Datascience</strong>
         . I&apos;m currently{" "} super interested in Computational Mathematics, Abstract Algebra, and Mixed Reality.
