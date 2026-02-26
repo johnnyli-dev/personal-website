@@ -5,7 +5,7 @@
     height: 0
   }
   to {
-    height: calc(100% - var(--line-end-offset, 5rem));
+    height: calc(100% - var(--line-end-offset, 6.5rem));
   }
 }
 
@@ -61,7 +61,7 @@
   width: 1.5px;
   height: 0;
   background: var(--color-border);
-  animation: drawLine 2.5s ease-out forwards;
+  animation: drawLine 2s ease forwards;
 }
 
 /* Timeline items (shared) */
@@ -72,14 +72,15 @@
   animation: fadeIn 0.3s ease-out forwards;
 }
 
-/* Child 3 is now the divider, so timelineItems are 1,2,4,5,6,7,8 */
-.timelineItem:nth-child(1) { animation-delay: 0s; }
-.timelineItem:nth-child(2) { animation-delay: 0.02s; }
-.timelineItem:nth-child(4) { animation-delay: 0.30s; }
-.timelineItem:nth-child(5) { animation-delay: 0.55s; }
-.timelineItem:nth-child(6) { animation-delay: 0.80s; }
-.timelineItem:nth-child(7) { animation-delay: 1.35s; }
-.timelineItem:nth-child(8) { animation-delay: 2.20s; }
+/* Dividers are children 3 and 8; timelineItems are 1,2,4,5,6,7,9,10 */
+.timelineItem:nth-child(1)  { animation-delay: 0s; }
+.timelineItem:nth-child(2)  { animation-delay: 0.10s; }
+.timelineItem:nth-child(4)  { animation-delay: 0.30s; }
+.timelineItem:nth-child(5)  { animation-delay: 0.45s; }
+.timelineItem:nth-child(6)  { animation-delay: 0.60s; }
+.timelineItem:nth-child(7)  { animation-delay: 0.75s; }
+.timelineItem:nth-child(9)  { animation-delay: 1.00s; }
+.timelineItem:nth-child(10) { animation-delay: 1.30s; }
 
 /* Timeline content (slides in from left) */
 
@@ -89,13 +90,14 @@
   animation: revealEntry 0.4s ease-out forwards;
 }
 
-.timelineItem:nth-child(1) .timelineContent { animation-delay: 0.18s; }
-.timelineItem:nth-child(2) .timelineContent { animation-delay: 0.28s; }
-.timelineItem:nth-child(4) .timelineContent { animation-delay: 0.63s; }
-.timelineItem:nth-child(5) .timelineContent { animation-delay: 0.68s; }
-.timelineItem:nth-child(6) .timelineContent { animation-delay: 0.98s; }
-.timelineItem:nth-child(7) .timelineContent { animation-delay: 1.53s; }
-.timelineItem:nth-child(8) .timelineContent { animation-delay: 2.18s; }
+.timelineItem:nth-child(1)  .timelineContent { animation-delay: 0.08s; }
+.timelineItem:nth-child(2)  .timelineContent { animation-delay: 0.18s; }
+.timelineItem:nth-child(4)  .timelineContent { animation-delay: 0.38s; }
+.timelineItem:nth-child(5)  .timelineContent { animation-delay: 0.53s; }
+.timelineItem:nth-child(6)  .timelineContent { animation-delay: 0.68s; }
+.timelineItem:nth-child(7)  .timelineContent { animation-delay: 0.83s; }
+.timelineItem:nth-child(9)  .timelineContent { animation-delay: 1.08s; }
+.timelineItem:nth-child(10) .timelineContent { animation-delay: 1.38s; }
 
 /* Timeline nodes */
 
@@ -137,15 +139,23 @@
   height: 1px;
   background: var(--color-border);
   width: 0;
-  animation: drawDivider 0.75s ease-out forwards;
-  animation-delay: 0.35s;
+  animation: drawDivider 0.75s ease forwards;
 }
+
+/* First divider (between Education and Experience) */
+.timelineDivider:nth-child(3) .dividerLine { animation-delay: 0.20s; }
+/* Second divider (between Experience and Research) */
+.timelineDivider:nth-child(8) .dividerLine { animation-delay: 0.90s; }
 
 /* Experience entries */
 
 .timelineEntry {
   margin-bottom: 0.75rem;
   margin-top: 1.75rem;
+}
+
+.timelineContent h3 {
+  margin: 0;
 }
 
 .entryHeader {
@@ -155,21 +165,17 @@
   gap: 1rem;
 }
 
-.entryHeader h3 {
-  margin: 0;
+.role {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+  font-style: italic;
 }
 
 .date {
   font-size: 0.85rem;
   color: var(--color-text-secondary);
   white-space: nowrap;
-}
-
-.role {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 0.5rem;
-  font-style: italic;
 }
 
 /* Responsive */
@@ -209,7 +215,7 @@
 
   .timeline::before {
     animation: none;
-    height: calc(100% - var(--line-end-offset, 6rem));
+    height: calc(100% - var(--line-end-offset, 5rem));
   }
 
   .timelineItem {

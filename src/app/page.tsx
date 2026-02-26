@@ -21,7 +21,7 @@ export default function Home() {
         This summer, I&apos;ll be at <strong>Apple</strong> as a Software Enginering Intern working in the{" "}
         <strong>Vision Products Group</strong>. Previously, I worked at{" "}
         <strong>Scale AI</strong> as a Product Managment Intern and <strong>Airspace Technologies</strong>,
-        as a Data Analyst Intern. Currently, I'm a researcher at{" "}
+        as a Data Analyst Intern. Currently, I'm a machine learning researcher at{" "}
         <strong>Stanford AI Lab (SAIL)</strong> focusing on{" "}
         <strong>AI Cybersecurity Benchmarks</strong>.
       </p>
