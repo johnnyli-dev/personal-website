@@ -1,58 +1,103 @@
-import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
-import styles from "./page.module.css";
+import Link from "next/link"
+import { getAllPosts } from "@/lib/posts"
+import { ScrollReveal } from "@/components/scroll-reveal"
+import { ArrowRight } from "lucide-react"
 
-export default function Home() {
-  const recentPosts = getAllPosts().slice(0, 3);
+export default function HomePage() {
+  const recentPosts = getAllPosts().slice(0, 3)
 
   return (
-    <article className={styles.page}>
-      <p className={styles.greeting}>Hey!</p>
+    <div className="min-h-screen">
+      <div className="max-w-[900px] mx-auto px-6 py-16 md:py-24">
+        <ScrollReveal delay={0}>
+          <h1 className="text-6xl md:text-7xl font-medium tracking-tight mb-16 text-foreground">
+            Hey!
+          </h1>
+        </ScrollReveal>
 
-      <p className={styles.prose}>
-        My name is <strong>Jonathan Li</strong>, I&apos;m studying{" "}
-        <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>{" "}
-        at <strong>UC Berkeley</strong>. I like building things involving <strong>Math, CS, and Datascience</strong>
-        . I&apos;m currently{" "} super interested in Computational Mathematics, Abstract Algebra, and Mixed Reality.
-        
-      </p>
+        <div className="space-y-8 text-lg leading-relaxed text-muted-foreground">
+          <ScrollReveal delay={0.1}>
+            <p>
+              My name is <strong className="text-foreground font-medium">Jonathan Li</strong>,
+              I&apos;m studying <strong className="text-foreground font-medium">Applied Mathematics</strong> and{" "}
+              <strong className="text-foreground font-medium">Computer Science</strong> at{" "}
+              <strong className="text-foreground font-medium">UC Berkeley</strong>. I like building
+              things involving <strong className="text-foreground font-medium">Math, CS, and Data Science</strong>.
+              I&apos;m currently super interested in Computational Mathematics, Abstract Algebra, and Mixed Reality.
+            </p>
+          </ScrollReveal>
 
-      <p className={styles.prose}>
-        This summer, I&apos;ll be at <strong>Apple</strong> as a Software Enginering Intern working in the{" "}
-        <strong>Vision Products Group</strong>. Previously, I worked at{" "}
-        <strong>Scale AI</strong> as a Product Managment Intern and <strong>Airspace Technologies</strong>,
-        as a Data Analyst Intern. Currently, I'm a machine learning researcher at{" "}
-        <strong>Stanford AI Lab (SAIL)</strong> focusing on{" "}
-        <strong>AI Cybersecurity Benchmarks</strong>.
-      </p>
+          <ScrollReveal delay={0.2}>
+            <p>
+              This summer, I&apos;ll be at <strong className="text-foreground font-medium">Apple</strong> as
+              a Software Engineering Intern working in the{" "}
+              <strong className="text-foreground font-medium">Vision Products Group</strong>. Previously,
+              I worked at <strong className="text-foreground font-medium">Scale AI</strong> as a Product
+              Management Intern and <strong className="text-foreground font-medium">Airspace Technologies</strong>,
+              as a Data Analyst Intern. Currently, I&apos;m a machine learning researcher at{" "}
+              <strong className="text-foreground font-medium">Stanford AI Lab (SAIL)</strong> focusing on{" "}
+              <strong className="text-foreground font-medium">AI Cybersecurity Benchmarks</strong>.
+            </p>
+          </ScrollReveal>
 
-      <p className={styles.prose}>
-        In my free time, I enjoy <strong>playing volleyball</strong>,{" "}
-        <strong>golfing</strong>, <strong>traveling</strong>, and <strong>trying new foods</strong>.
-      </p>
+          <ScrollReveal delay={0.3}>
+            <p>
+              In my free time, I enjoy <strong className="text-foreground font-medium">playing volleyball</strong>,{" "}
+              <strong className="text-foreground font-medium">golfing</strong>,{" "}
+              <strong className="text-foreground font-medium">traveling</strong>, and{" "}
+              <strong className="text-foreground font-medium">trying new foods</strong>.
+            </p>
+          </ScrollReveal>
 
-      <p className={styles.prose}>
-        I try to jot down <a href="/my-thoughts">my thoughts</a> about a great variety of things. Feel free to check them out if you are interested!
-      </p>
+          <ScrollReveal delay={0.4}>
+            <p>
+              I try to jot down my thoughts about a great variety of things. Feel free to{" "}
+              <Link
+                href="/my-thoughts"
+                className="text-foreground font-medium underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                check them out
+              </Link>{" "}
+              if you are interested!
+            </p>
+          </ScrollReveal>
+        </div>
 
-      {recentPosts.length > 0 && (
-        <section className={styles.recent}>
-          <h2>Recent thoughts</h2>
-          <ul className={styles.postList}>
-            {recentPosts.map((post) => (
-              <li key={post.slug} className={styles.postItem}>
-                <Link href={`/my-thoughts/${post.slug}`} className={styles.postLink}>
-                  {post.title}
-                </Link>
-                <span className={styles.postDate}>{post.date}</span>
-              </li>
-            ))}
-          </ul>
-          <Link href="/my-thoughts" className={styles.viewAll}>
-            All posts &rarr;
-          </Link>
-        </section>
-      )}
-    </article>
-  );
+        {recentPosts.length > 0 && (
+          <ScrollReveal delay={0.5} className="mt-20">
+            <div className="border-t border-border pt-12">
+              <h2 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-8">
+                Recent Thoughts
+              </h2>
+
+              <div className="space-y-4">
+                {recentPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/my-thoughts/${post.slug}`}
+                    className="group flex items-baseline justify-between py-3 border-b border-border/50 hover:border-border transition-colors"
+                  >
+                    <span className="text-foreground group-hover:opacity-70 transition-opacity">
+                      {post.title}
+                    </span>
+                    <span className="font-mono text-sm text-muted-foreground ml-4 shrink-0">
+                      {post.date}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                href="/my-thoughts"
+                className="inline-flex items-center gap-2 mt-8 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors group"
+              >
+                All posts
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        )}
+      </div>
+    </div>
+  )
 }

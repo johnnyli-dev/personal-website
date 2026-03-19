@@ -1,29 +1,47 @@
-import Link from "next/link";
-import { getAllPosts } from "@/lib/posts";
+import Link from "next/link"
+import { getAllPosts } from "@/lib/posts"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
-export default function MyThoughts() {
-  const posts = getAllPosts();
+export const metadata = {
+  title: "My Thoughts | Jonathan Li",
+  description: "Blog posts and thoughts by Jonathan Li",
+}
+
+export default function MyThoughtsPage() {
+  const posts = getAllPosts()
 
   return (
-    <article>
-      <h1>My Thoughts</h1>
-      {posts.length === 0 ? (
-        <p>No posts yet.</p>
-      ) : (
-        <ul style={{ listStyle: "none", padding: 0 }}>
-          {posts.map((post) => (
-            <li key={post.slug} style={{ marginBottom: "1.5rem" }}>
-              <Link href={`/my-thoughts/${post.slug}`}>
-                <strong>{post.title}</strong>
+    <div className="min-h-screen">
+      <div className="max-w-[900px] mx-auto px-6 py-16 md:py-24">
+        <ScrollReveal>
+          <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-4 text-foreground">
+            My Thoughts
+          </h1>
+          <p className="text-muted-foreground text-lg mb-16">
+            A collection of writings on math, tech, research, and life.
+          </p>
+        </ScrollReveal>
+
+        <div className="space-y-1">
+          {posts.map((post, index) => (
+            <ScrollReveal key={post.slug} delay={0.05 * (index + 1)}>
+              <Link
+                href={`/my-thoughts/${post.slug}`}
+                className="group block py-6 border-b border-border/50 hover:border-border transition-colors"
+              >
+                <div className="flex items-baseline justify-between gap-4 mb-2">
+                  <h2 className="text-xl font-medium text-foreground group-hover:opacity-70 transition-opacity">
+                    {post.title}
+                  </h2>
+                  <span className="font-mono text-sm text-muted-foreground shrink-0">
+                    {post.date}
+                  </span>
+                </div>
               </Link>
-              <br />
-              <small style={{ color: "var(--color-text-secondary)" }}>
-                {post.date}
-              </small>
-            </li>
+            </ScrollReveal>
           ))}
-        </ul>
-      )}
-    </article>
-  );
+        </div>
+      </div>
+    </div>
+  )
 }
