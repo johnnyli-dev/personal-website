@@ -5,7 +5,7 @@
     height: 0
   }
   to {
-    height: calc(100% - var(--line-end-offset, 6.5rem));
+    height: calc(100% - var(--line-end-offset, 6rem));
   }
 }
 
