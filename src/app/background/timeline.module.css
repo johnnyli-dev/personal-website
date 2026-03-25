@@ -195,6 +195,10 @@
     height: 8px;
   }
 
+  .timeline::before {
+    --line-end-offset: 9rem;
+  }
+
   .entryHeader {
     flex-direction: column;
     gap: 0.15rem;
