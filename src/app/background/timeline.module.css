@@ -196,7 +196,7 @@
   }
 
   .timeline::before {
-    --line-end-offset: 9rem;
+    --line-end-offset: 10rem;
   }
 
   .entryHeader {
