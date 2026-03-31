@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-border mt-20">
-      <div className="max-w-[1000px] mx-auto px-6 py-8 flex items-center justify-between">
+      <div className="max-w-[1000px] mx-auto px-6 py-8 flex flex-col items-center gap-4 md:flex-row md:justify-between">
         <div className="flex items-center gap-6 text-sm text-muted-foreground">
           <a
             href="https://github.com/jonathanli1"

@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
@@ -14,6 +15,7 @@ const navLinks = [
 
 export function Navigation() {
   const pathname = usePathname()
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
@@ -25,7 +27,8 @@ export function Navigation() {
           Jonathan Li
         </Link>
 
-        <ul className="flex items-center gap-8">
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -54,7 +57,64 @@ export function Navigation() {
             )
           })}
         </ul>
+
+        {/* Mobile hamburger button */}
+        <button
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+        >
+          <span
+            className={cn(
+              "block w-5 h-px bg-foreground transition-all duration-200 origin-center",
+              mobileOpen && "translate-y-[3.5px] rotate-45"
+            )}
+          />
+          <span
+            className={cn(
+              "block w-5 h-px bg-foreground transition-all duration-200",
+              mobileOpen && "opacity-0"
+            )}
+          />
+          <span
+            className={cn(
+              "block w-5 h-px bg-foreground transition-all duration-200 origin-center",
+              mobileOpen && "-translate-y-[3.5px] -rotate-45"
+            )}
+          />
+        </button>
       </nav>
+
+      {/* Mobile dropdown */}
+      {mobileOpen && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-sm">
+          <ul className="flex flex-col px-6 py-4 gap-4">
+            {navLinks.map((link) => {
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href))
+
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "text-sm font-mono transition-all duration-200 block py-1",
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )}
     </header>
   )
 }
