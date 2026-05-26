@@ -1,6 +1,9 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import ReactMarkdown from "react-markdown"
+import remarkMath from "remark-math"
+import rehypeKatex from "rehype-katex"
+import "katex/dist/katex.min.css"
 import { ArrowLeft } from "lucide-react"
 import { getAllPosts, getPostBySlug } from "@/lib/posts"
 import { ScrollReveal } from "@/components/scroll-reveal"
@@ -48,7 +51,7 @@ export default async function PostPage({ params }: Props) {
 
         <ScrollReveal delay={0.2}>
           <article className="text-muted-foreground leading-relaxed space-y-6 [&_h1]:text-2xl [&_h1]:font-medium [&_h1]:text-foreground [&_h1]:mt-10 [&_h1]:mb-4 [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-foreground [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-medium [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3 [&_p]:leading-relaxed [&_strong]:text-foreground [&_strong]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:underline-offset-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>{post.content}</ReactMarkdown>
           </article>
         </ScrollReveal>
       </div>
