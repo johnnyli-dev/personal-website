@@ -52,10 +52,14 @@ export default function BackgroundPage() {
             <div className={styles.timelineContent}>
               <div className={styles.entryHeader}>
                 <h3 className="text-base font-medium text-foreground">Apple</h3>
-                <span className={`font-mono ${styles.date}`}>Summer 2026</span>
+                <span className={`font-mono ${styles.date}`}>May – Aug 2026</span>
               </div>
-              <p className={styles.role}>Incoming SWE Intern</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">Vision Products Group</p>
+              <p className={styles.role}>Software Engineering Intern · Vision Products Group</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Built Python and C++ pipelines to parse crash logs, classify failure modes, and
+                dispatch targeted repair agents across device fleets, with VM-based test
+                infrastructure to validate proposed fixes in isolation before deployment.
+              </p>
             </div>
           </div>
 
@@ -68,8 +72,9 @@ export default function BackgroundPage() {
               </div>
               <p className={styles.role}>Strategic Product Management Intern</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Analyzed model performance across client cohorts and shipped a
-                synthetic website generation tool.
+                Built NumPy/Pandas pipelines to diagnose model failure areas across client cohorts,
+                supporting $30M/quarter in model support and lifting performance up to 22% for a key
+                client through targeted dataset improvements.
               </p>
             </div>
           </div>
@@ -83,7 +88,9 @@ export default function BackgroundPage() {
               </div>
               <p className={styles.role}>Data Analytics Intern</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Built freight cost estimation algorithms and automated data pipelines.
+                Optimized SQL algorithms for large-volume freight shipping cost estimation
+                (~$400K in projected annual savings) and automated ingestion of 10M+ rows into
+                Snowflake.
               </p>
             </div>
           </div>
@@ -103,13 +110,35 @@ export default function BackgroundPage() {
             <div className={styles.timelineNode} />
             <div className={styles.timelineContent}>
               <div className={styles.entryHeader}>
+                <h3 className="text-base font-medium text-foreground">
+                  UC Berkeley College of Environmental Design
+                </h3>
+                <span className={`font-mono ${styles.date}`}>Sept 2026 – Present</span>
+              </div>
+              <p className={styles.role}>
+                Undergraduate Researcher — Human Behavior Simulation (advised by Prof. Yehuda Kalay)
+              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Building a discrete-event simulation of occupant evacuation in high-rise residential
+                buildings, applying reinforcement learning to model how individual residents make
+                egress decisions under fire emergency conditions.
+              </p>
+            </div>
+          </div>
+
+          <div className={`${styles.timelineItem} ${styles.timelineEntry}`}>
+            <div className={styles.timelineNode} />
+            <div className={styles.timelineContent}>
+              <div className={styles.entryHeader}>
                 <h3 className="text-base font-medium text-foreground">Stanford AI Lab (SAIL)</h3>
                 <span className={`font-mono ${styles.date}`}>July 2025 – Present</span>
               </div>
               <p className={styles.role}>Undergraduate Researcher</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Building evaluation infrastructure for cybersecurity agents —
-                containerized environments, Docker pipelines, and data analysis.
+                Building evaluation infrastructure for a mobile cybersecurity agent benchmark —
+                Docker Compose stacks (API, PostgreSQL, Redis), emulator/agent/backend networking,
+                and Python probe suites that verify vulnerability presence across token leakage,
+                credential exposure, and API access control.
               </p>
             </div>
           </div>

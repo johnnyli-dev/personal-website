@@ -29,18 +29,41 @@ export default function HomePage() {
 
           <ScrollReveal delay={0.2}>
             <p>
-              This summer, I&apos;ll be at <strong className="text-foreground font-medium">Apple</strong> as
-              a Software Engineering Intern working in the{" "}
-              <strong className="text-foreground font-medium">Vision Products Group</strong>. Previously,
-              I worked at <strong className="text-foreground font-medium">Scale AI</strong> as a Product
-              Management Intern and <strong className="text-foreground font-medium">Airspace Technologies</strong>,
-              as a Data Analyst Intern. Currently, I&apos;m a machine learning researcher at{" "}
-              <strong className="text-foreground font-medium">Stanford AI Lab (SAIL)</strong> focusing on{" "}
-              <strong className="text-foreground font-medium">AI Cybersecurity Benchmarks</strong>.
+              This past summer, I was at <strong className="text-foreground font-medium">Apple</strong> as
+              a Software Engineering Intern in the{" "}
+              <strong className="text-foreground font-medium">Vision Products Group</strong>, where I built
+              Python and C++ pipelines that parse crash logs, classify failure modes, and dispatch{" "}
+              <strong className="text-foreground font-medium">agent-based repair loops</strong> that propose
+              fixes and validate them on VMs before they ship. Previously, I worked at{" "}
+              <strong className="text-foreground font-medium">Scale AI</strong> as a Product Management
+              Intern and <strong className="text-foreground font-medium">Airspace Technologies</strong> as a
+              Data Analyst Intern.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
+            <p>
+              These days I&apos;m back at Berkeley and doing research on two fronts. I&apos;m a machine
+              learning researcher at{" "}
+              <strong className="text-foreground font-medium">Stanford AI Lab (SAIL)</strong>, where I work
+              on <strong className="text-foreground font-medium">AI cybersecurity benchmarks</strong> —
+              building the containerized environments and evaluation infrastructure used to measure what
+              autonomous agents can actually do. I also recently joined a project at{" "}
+              <strong className="text-foreground font-medium">
+                UC Berkeley&apos;s College of Environmental Design
+              </strong>{" "}
+              with Prof. Yehuda Kalay, simulating{" "}
+              <strong className="text-foreground font-medium">
+                emergency egress in high-rise residential buildings
+              </strong>
+              . We combine discrete-event simulation with{" "}
+              <strong className="text-foreground font-medium">reinforcement learning</strong> to model how
+              individual residents actually decide to evacuate during a fire, rather than assuming one
+              average occupant — so a floor plan can be stress-tested long before it gets built.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.4}>
             <p>
               In my free time, I enjoy <strong className="text-foreground font-medium">playing volleyball</strong>,{" "}
               <strong className="text-foreground font-medium">golfing</strong>,{" "}
@@ -49,7 +72,7 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.4}>
+          <ScrollReveal delay={0.5}>
             <p>
               I try to jot down my thoughts about a great variety of things. Feel free to{" "}
               <Link
@@ -64,7 +87,7 @@ export default function HomePage() {
         </div>
 
         {recentPosts.length > 0 && (
-          <ScrollReveal delay={0.5} className="mt-20">
+          <ScrollReveal delay={0.6} className="mt-20">
             <div className="border-t border-border pt-12">
               <h2 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-8">
                 Recent Thoughts
